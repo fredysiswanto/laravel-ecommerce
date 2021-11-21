@@ -41,7 +41,8 @@ class OrderPlaceRequest extends FormRequest
             $rules['billing.company_name'] = 'required|max:255';
             $rules['billing.phone'] = 'required|max:255';
             $rules['billing.address1'] = 'required|max:255';
-            $rules['billing.address2'] = 'required|max:255';
+            $rules['billing.address2'] = 'max:255';
+            // $rules['billing.address2'] = 'required|max:255';
             $rules['billing.country_id'] = 'required';
             $rules['billing.state'] = 'required';
             $rules['billing.city'] = 'required|max:255';
@@ -62,7 +63,7 @@ class OrderPlaceRequest extends FormRequest
         }
 
         $rules['payment_option'] = 'required';
-        $rules['shipping_option'] = 'required';
+        // $rules['shipping_option'] = 'required';
 
         return $rules;
     }
